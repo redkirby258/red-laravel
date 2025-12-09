@@ -14,7 +14,8 @@ class AddToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->boolean('admin_status')->default(false);
+            $table->string('attendance_status')->default('勤務外');
         });
     }
 
